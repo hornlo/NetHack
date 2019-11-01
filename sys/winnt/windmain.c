@@ -17,6 +17,8 @@
 #include <ShlObj.h>
 
 #ifdef __MINGW32__
+#include <knownfolders.h>
+
 extern LONG GetCurrentPackageFullName(UINT32 *packageFullNameLength,
                       PWSTR  packageFullName);
 extern HRESULT SHGetKnownFolderPath(REFKNOWNFOLDERID rfid,
@@ -379,7 +381,7 @@ copy_hack_content()
  * WinMain exist, the resulting executable won't work correctly.
  */
 int
-#ifndef __MINGW32__ 
+#ifndef __MINGW32__
 main(argc, argv)
 #else
 mingw_main(argc, argv)
@@ -447,7 +449,7 @@ _CrtSetReportFile(_CRT_ASSERT, _CRTDBG_FILE_STDERR);*/
 
     check_recordfile((char *) 0);
     iflags.windowtype_deferred = TRUE;
-    initoptions();                  
+    initoptions();
     if (!validate_prefix_locations(failbuf)) {
         raw_printf("Some invalid directory locations were specified:\n\t%s\n",
                    failbuf);
@@ -865,7 +867,7 @@ fakeconsole(void)
         }
         has_fakeconsole = TRUE;
     }
-    
+
     /* Obtain handles for the standard Console I/O devices */
     hConIn = GetStdHandle(STD_INPUT_HANDLE);
     hConOut = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -1159,7 +1161,7 @@ const char *path;
     return TRUE;
 }
 
-/* 
+/*
   file_newer returns TRUE if the file at a_path is newer then the file
   at b_path.  If a_path does not exist, it returns FALSE.  If b_path
   does not exist, it returns TRUE.
