@@ -11,11 +11,15 @@
 #include <stdlib.h>
 #include <sys\stat.h>
 #include <errno.h>
+
 #ifndef __MINGW32__
-#include <appmodel.h>
+# include <appmodel.h>
+#else
+# include <winapifamily.h>
+# include <knownfolders.h>
 #endif
+
 #include <ShlObj.h>
-#include <knownfolders.h>
 
 #if 0
 #include "wintty.h"
