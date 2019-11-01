@@ -12,15 +12,25 @@
 #include <sys\stat.h>
 #include <errno.h>
 
+// mark 01
 #ifndef __MINGW32__
+// mark 02
 # include <appmodel.h>
+// mark 03
 #else
+// mark 04
 #ifndef WINAPI_FAMILY
+// mark 05
 #define WINAPI_FAMILY WINAPI_FAMILY_DESKTOP_APP
+// mark 06
 #endif
+// mark 07
 # include <winapifamily.h>
+// mark 08
 # include <knownfolders.h>
+// mark 09
 #endif
+// mark 10
 
 #include <ShlObj.h>
 
