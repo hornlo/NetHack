@@ -15,6 +15,9 @@
 #ifndef __MINGW32__
 # include <appmodel.h>
 #else
+#ifndef WINAPI_FAMILY
+#define WINAPI_FAMILY WINAPI_FAMILY_DESKTOP_APP
+#endif
 # include <winapifamily.h>
 # include <knownfolders.h>
 #endif
