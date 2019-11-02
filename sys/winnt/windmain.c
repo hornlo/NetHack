@@ -14,6 +14,7 @@
 #include <ShlObj.h>
 
 #ifdef __MINGW32__
+#include <knownfolders.h>
 extern LONG GetCurrentPackageFullName(UINT32 *packageFullNameLength,
                       PWSTR  packageFullName);
 #else
