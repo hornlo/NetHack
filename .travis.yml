@@ -6,9 +6,9 @@ matrix:
       language: shell
       script:
         - cd util
-        - wget -O miktex-portable.exe https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-2.9.7219-x64.exe
+        - wget -nv -O .\install-tl-windows.exe http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe
         - ls -l
-        - ./miktex-portable.exe --quiet --package-set=basic install
+        - .\install-tl-windows -gui text
         - ./win/win32/vs2017/travisci.sh
     - os: windows
 #     install: choco install mingw
