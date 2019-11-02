@@ -1167,4 +1167,3 @@ const char * b_path;
 }
 
 /*windmain.c*/
-
