@@ -1,11 +1,11 @@
 language: c
 matrix:
   include:
-#    - os: windows
-#      env: DESCR=windows-visualstudio
-#      language: shell
-#      script:
-#        - ./win/win32/vs2017/travisci.sh
+    - os: windows
+      env: DESCR=windows-visualstudio
+      language: shell
+      script:
+        - ./win/win32/vs2017/travisci.sh
     - os: windows
 #     install: choco install mingw
       env: DESCR=windows-mingw
