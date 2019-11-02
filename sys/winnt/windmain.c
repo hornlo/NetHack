@@ -11,43 +11,14 @@
 #include <stdlib.h>
 #include <sys\stat.h>
 #include <errno.h>
-
-// mark 01
-#ifndef __MINGW32__
-// mark 02
-# include <appmodel.h>
-// mark 03
-#else
-
-#if 0
-
-// mark 04
-#ifndef WINAPI_FAMILY
-// mark 05
-#define WINAPI_FAMILY WINAPI_FAMILY_DESKTOP_APP
-// mark 06
-#endif
-// mark 07
-# include <winapifamily.h>
-// mark 08
-# include <knownfolders.h>
-// mark 09
-#endif
-
-#endif
-
-// mark 10
-
 #include <ShlObj.h>
 
 #ifdef __MINGW32__
 extern LONG GetCurrentPackageFullName(UINT32 *packageFullNameLength,
                       PWSTR  packageFullName);
-#if 0
-extern HRESULT SHGetKnownFolderPath(REFKNOWNFOLDERID rfid,
-                      DWORD dwFlags, HANDLE hToken, PWSTR  *ppszPath);
+#else
+# include <appmodel.h>
 #endif
-#endif /* __MINGW32__ */
 
 #if !defined(SAFEPROCS)
 #error You must #define SAFEPROCS to build windmain.c
