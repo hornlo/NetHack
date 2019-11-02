@@ -19,9 +19,6 @@
 # include <appmodel.h>
 // mark 03
 #else
-#ifndef NTDDI_VERSION
-#define NTDDI_VERSION 0x06010000
-#endif
 // mark 04
 #ifndef WINAPI_FAMILY
 // mark 05

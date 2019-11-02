@@ -36,6 +36,11 @@
 #pragma pack(8)
 #endif // _MSC_VER
 
+#ifdef __MINGW32__
+#define _WIN32_WINNT 0x0601
+#define WINVER 0x0601
+#endif
+
 #define WIN32_LEAN_AND_MEAN
 
 #include <windows.h>
