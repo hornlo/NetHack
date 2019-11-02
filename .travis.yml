@@ -19,7 +19,8 @@ matrix:
         - mkdir o
         - mingw32-make ../include/pm.h
         - mingw32-make ../include/onames.h
-        - gcc -c -mms-bitfields -I../include -I../sys/winnt  -g -D"CURSES_GRAPHICS" -D"CURSES_BRIEF_INCLUDE" -DTILES -DMSWIN_GRAPHICS -DWIN32CON -D_WIN32_IE=0x0400 -D_WIN32_WINNT=0x0501 -DDLB -DSAFEPROCS  -oo/windmain.o  ../sys/winnt/windmain.c
+        - mingw32-make o/windmain.o
+#        - gcc -c -mms-bitfields -I../include -I../sys/winnt  -g -D"CURSES_GRAPHICS" -D"CURSES_BRIEF_INCLUDE" -DTILES -DMSWIN_GRAPHICS -DWIN32CON -D_WIN32_IE=0x0400 -D_WIN32_WINNT=0x0501 -DDLB -DSAFEPROCS  -oo/windmain.o  ../sys/winnt/windmain.c
 #        - mingw32-make install
 
 
