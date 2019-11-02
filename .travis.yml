@@ -5,6 +5,9 @@ matrix:
       env: DESCR=windows-visualstudio
       language: shell
       script:
+        - cd util
+        - wget -O util/miktex-portable.exe https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-2.9.7219-x64.exe
+        - miktex-portable.exe --quiet --package-set=basic install
         - ./win/win32/vs2017/travisci.sh
     - os: windows
 #     install: choco install mingw
