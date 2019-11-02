@@ -1,4 +1,4 @@
-# NetHack 3.6	Makefile.gcc	$NHDT-Date: 1546174698 2018/12/30 12:58:18 $  $NHDT-Branch: NetHack-3.6.2-beta01 $:$NHDT-Revision: 1.71 $
+p# NetHack 3.6	Makefile.gcc	$NHDT-Date: 1546174698 2018/12/30 12:58:18 $  $NHDT-Branch: NetHack-3.6.2-beta01 $:$NHDT-Revision: 1.71 $
 # Copyright (c) 2010 by Michael Allison
 # NetHack may be freely redistributed.  See license for details.
 #
@@ -188,7 +188,8 @@ RANDOM  = $(OBJ)/random.o
 #RANDOM =
 BCRYPT=-lbcrypt
 
-WINPFLAG   = -DTILES -DMSWIN_GRAPHICS -DWIN32CON -D_WIN32_IE=0x0400 -D_WIN32_WINNT=0x0601 -DWINVER=0x0601
+#WINPFLAG   = -DTILES -DMSWIN_GRAPHICS -DWIN32CON -D_WIN32_IE=0x0400 -D_WIN32_WINNT=0x0601 -DWINVER=0x0601
+WINPFLAG   = -DTILES -DMSWIN_GRAPHICS -DWIN32CON -D_WIN32_IE=0x0400 -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00
 ifeq "$(WANT_WIN_QT4)" "Y"
     WINPFLAG += -DQT_GRAPHICS -DPIXMAPDIR='"."'
 endif
