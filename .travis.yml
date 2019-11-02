@@ -6,7 +6,7 @@ matrix:
       language: shell
       script:
         - cd util
-        - wget -O .\install-tl-windows.exe http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe
+        - wget -O install-tl-windows.exe http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe
         - ls -l
         - .\install-tl-windows -gui text
         - ./win/win32/vs2017/travisci.sh
